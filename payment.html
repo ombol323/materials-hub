@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Stellantis Materials Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span>📧 materials@stellantis.com</span>
+                     <span>📞 +(33) 690476399</span>
+                </div>
+                <div class="user-actions">
+                    <a href="login.html" class="login-link">Employee Login</a>
+                    <span class="divider">|</span>
+                    <a href="support.html" class="support-link">Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Stellantis Materials Hub</span>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+                    <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+                    <li><a href="procurement.html" class="nav-link">Procurement</a></li>
+                    <li><a href="analytics.html" class="nav-link">Analytics</a></li>
+                    <li><a href="support.html" class="nav-link">Support</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="19" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="cart-count">3</span>
+                    </button>
+                </div>
+                
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Progress -->
+    <section class="checkout-progress">
+        <div class="container">
+            <div class="progress-steps">
+                <div class="step completed">
+                    <div class="step-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span>Cart Review</span>
+                </div>
+                <div class="step-line completed"></div>
+                <div class="step completed">
+                    <div class="step-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span>Checkout</span>
+                </div>
+                <div class="step-line completed"></div>
+                <div class="step active">
+                    <div class="step-icon">3</div>
+                    <span>Payment</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-icon">4</div>
+                    <span>Confirmation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <div class="container">
+            <div class="payment-layout">
+                <!-- Payment Form -->
+                <div class="payment-form-container">
+                    <h2>Payment Information</h2>
+                    
+                    <!-- Payment Methods -->
+                    <div class="payment-methods">
+                        <h3>Select Payment Method</h3>
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="corporate-card" checked>
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                            <line x1="1" y1="10" x2="23" y2="10" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <div class="option-details">
+                                        <h4>Corporate Credit Card</h4>
+                                        <p>Use company credit card for payment</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="purchase-order">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/>
+                                            <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <div class="option-details">
+                                        <h4>Purchase Order</h4>
+                                        <p>Generate PO for accounting department</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="budget-transfer">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <div class="option-details">
+                                        <h4>Budget Transfer</h4>
+                                        <p>Transfer from department budget</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Corporate Card Form -->
+                    <div class="payment-form corporate-card-form" id="corporateCardForm">
+                        <h3>Corporate Credit Card Details</h3>
+                        <form id="cardPaymentForm">
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number *</label>
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                <div class="card-icons">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAzMiAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjIwIiByeD0iNCIgZmlsbD0iIzAwNTFBNSIvPgo8cGF0aCBkPSJNMTMuNSA2SDE4LjVWMTRIMTMuNVY2WiIgZmlsbD0iI0ZGNUYwMCIvPgo8cGF0aCBkPSJNMTQgMTBDMTQgOC4zNDMxNSAxNC44OTU0IDYuODc0NTEgMTYuMjUgNkgxMy41VjE0SDE2LjI1QzE0Ljg5NTQgMTMuMTI1NSAxNCA5LjY1Njg1IDE0IDEwWiIgZmlsbD0iI0VCMDAxQiIvPgo8L3N2Zz4K" alt="Mastercard">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAzMiAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjIwIiByeD0iNCIgZmlsbD0iIzAwNTFBNSIvPgo8cGF0aCBkPSJNMTMuNSA2SDE4LjVWMTRIMTMuNVY2WiIgZmlsbD0iI0ZGNUYwMCIvPgo8L3N2Zz4K" alt="Visa">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiryDate">Expiry Date *</label>
+                                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV *</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cardholderName">Cardholder Name *</label>
+                                <input type="text" id="cardholderName" name="cardholderName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="billingAddress">Billing Address *</label>
+                                <textarea id="billingAddress" name="billingAddress" rows="3" required></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Purchase Order Form -->
+                    <div class="payment-form purchase-order-form" id="purchaseOrderForm" style="display: none;">
+                        <h3>Purchase Order Information</h3>
+                        <form id="poPaymentForm">
+                            <div class="form-group">
+                                <label for="poNumber">PO Number</label>
+                                <input type="text" id="poNumber" name="poNumber" placeholder="Will be auto-generated" readonly>
+                                <small>A purchase order number will be automatically generated</small>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="vendor">Preferred Vendor</label>
+                                    <select id="vendor" name="vendor">
+                                        <option value="">Select Vendor</option>
+                                        <option value="dell">Dell Technologies</option>
+                                        <option value="cisco">Cisco Systems</option>
+                                        <option value="hp">HP Inc.</option>
+                                        <option value="lenovo">Lenovo</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="paymentTerms">Payment Terms</label>
+                                    <select id="paymentTerms" name="paymentTerms">
+                                        <option value="net30">Net 30 days</option>
+                                        <option value="net60">Net 60 days</option>
+                                        <option value="net90">Net 90 days</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="specialInstructions">Special Instructions</label>
+                                <textarea id="specialInstructions" name="specialInstructions" rows="3" placeholder="Any special instructions for the vendor..."></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Budget Transfer Form -->
+                    <div class="payment-form budget-transfer-form" id="budgetTransferForm" style="display: none;">
+                        <h3>Budget Transfer Information</h3>
+                        <form id="budgetPaymentForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sourceBudget">Source Budget *</label>
+                                    <select id="sourceBudget" name="sourceBudget" required>
+                                        <option value="">Select Budget</option>
+                                        <option value="capex-2024">CAPEX 2024 - $125,000 available</option>
+                                        <option value="opex-q4">OPEX Q4 - $75,000 available</option>
+                                        <option value="it-budget">IT Budget - $200,000 available</option>
+                                        <option value="dept-budget">Department Budget - $50,000 available</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="budgetCode">Budget Code *</label>
+                                    <input type="text" id="budgetCode" name="budgetCode" required placeholder="e.g., CAPEX-2024-Q4">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="transferReason">Transfer Reason *</label>
+                                <textarea id="transferReason" name="transferReason" rows="3" required placeholder="Reason for budget transfer..."></textarea>
+                            </div>
+                            
+                            <div class="budget-summary">
+                                <h4>Budget Summary</h4>
+                                <div class="budget-item">
+                                    <span>Available Balance:</span>
+                                    <span class="amount">$125,000.00</span>
+                                </div>
+                                <div class="budget-item">
+                                    <span>Order Total:</span>
+                                    <span class="amount">$5,337.36</span>
+                                </div>
+                                <div class="budget-item total">
+                                    <span>Remaining Balance:</span>
+                                    <span class="amount">$119,662.64</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Security Information -->
+                    <div class="security-info">
+                        <div class="security-item">
+                            <div class="security-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <span>256-bit SSL encryption</span>
+                        </div>
+                        <div class="security-item">
+                            <div class="security-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="12" cy="16" r="1" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <span>PCI DSS compliant</span>
+                        </div>
+                        <div class="security-item">
+                            <div class="security-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <span>Verified secure payment</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <a href="checkout.html" class="btn btn-outline">Back to Checkout</a>
+                        <button type="submit" class="btn btn-primary" id="processPaymentBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="16" r="1" stroke="currentColor" stroke-width="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Process Payment
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Order Summary (Same as checkout) -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    
+                    <div class="summary-items">
+                        <div class="summary-item">
+                            <div class="item-image">
+                                <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop" alt="Dell OptiPlex 7090">
+                            </div>
+                            <div class="item-details">
+                                <h4>Dell OptiPlex 7090 Desktop</h4>
+                                <p>Intel Core i7, 16GB RAM, 512GB SSD</p>
+                                <div class="item-meta">
+                                    <span class="quantity">Qty: 2</span>
+                                    <span class="price">$1,299.00 each</span>
+                                </div>
+                            </div>
+                            <div class="item-total">$2,598.00</div>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="item-image">
+                                <img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop" alt="IoT Sensor">
+                            </div>
+                            <div class="item-details">
+                                <h4>IoT Temperature Sensor</h4>
+                                <p>Wireless, 2-year battery life</p>
+                                <div class="item-meta">
+                                    <span class="quantity">Qty: 5</span>
+                                    <span class="price">$89.00 each</span>
+                                </div>
+                            </div>
+                            <div class="item-total">$445.00</div>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="item-image">
+                                <img src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop" alt="Network Switch">
+                            </div>
+                            <div class="item-details">
+                                <h4>Cisco Catalyst 9300 Switch</h4>
+                                <p>48-port Gigabit with PoE+</p>
+                                <div class="item-meta">
+                                    <span class="quantity">Qty: 1</span>
+                                    <span class="price">$1,899.00 each</span>
+                                </div>
+                            </div>
+                            <div class="item-total">$1,899.00</div>
+                        </div>
+                    </div>
+
+                    <div class="summary-totals">
+                        <div class="total-line">
+                            <span>Subtotal</span>
+                            <span>$4,942.00</span>
+                        </div>
+                        <div class="total-line">
+                            <span>Shipping</span>
+                            <span>Free</span>
+                        </div>
+                        <div class="total-line">
+                            <span>Tax</span>
+                            <span>$395.36</span>
+                        </div>
+                        <div class="total-line total">
+                            <span>Total</span>
+                            <span>$5,337.36</span>
+                        </div>
+                    </div>
+
+                    <div class="payment-guarantee">
+                        <div class="guarantee-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="guarantee-text">
+                            <h4>100% Secure Payment</h4>
+                            <p>Your payment information is encrypted and secure. We never store your payment details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Stellantis Materials Hub</span>
+                    </div>
+                    <p>Empowering Stellantis teams with intelligent material procurement and management solutions for the modern workplace.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="catalog.html">Product Catalog</a></li>
+                        <li><a href="inventory.html">Inventory Management</a></li>
+                        <li><a href="procurement.html">Procurement Portal</a></li>
+                        <li><a href="analytics.html">Analytics Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="catalog.html?category=computers">Computers & Laptops</a></li>
+                        <li><a href="catalog.html?category=smart-devices">Smart Devices</a></li>
+                        <li><a href="catalog.html?category=network">Network Equipment</a></li>
+                        <li><a href="catalog.html?category=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="support.html#contact">Contact Support</a></li>
+                        <li><a href="support.html#training">Training Resources</a></li>
+                        <li><a href="support.html#documentation">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Stellantis N.V. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Security</a>
+                        <a href="#">Compliance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

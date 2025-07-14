@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management - Stellantis Materials Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span>📧 materials@stellantis.com</span>
+                    <span>📞 +(33) 690476399</span>
+                </div>
+                <div class="user-actions">
+                    <a href="login.html" class="login-link">Employee Login</a>
+                    <span class="divider">|</span>
+                    <a href="support.html" class="support-link">Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Stellantis Materials Hub</span>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+                    <li><a href="inventory.html" class="nav-link active">Inventory</a></li>
+                    <li><a href="procurement.html" class="nav-link">Procurement</a></li>
+                    <li><a href="analytics.html" class="nav-link">Analytics</a></li>
+                    <li><a href="support.html" class="nav-link">Support</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="19" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+                
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Inventory Management</h1>
+                <p>Real-time tracking and management of your technology assets and materials</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Inventory</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inventory Dashboard -->
+    <section class="inventory-dashboard">
+        <div class="container">
+            <!-- Stats Overview -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">15,847</div>
+                        <div class="stat-label">Total Assets</div>
+                        <div class="stat-change positive">+2.5% from last month</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">$2.8M</div>
+                        <div class="stat-label">Total Value</div>
+                        <div class="stat-change positive">+5.2% from last month</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">342</div>
+                        <div class="stat-label">Low Stock Items</div>
+                        <div class="stat-change negative">+12 from last week</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">98.5%</div>
+                        <div class="stat-label">Availability Rate</div>
+                        <div class="stat-change positive">+0.3% from last month</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions-bar">
+                <h3>Quick Actions</h3>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="addAssetBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2"/>
+                            <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Add Asset
+                    </button>
+                    <button class="btn btn-outline" id="bulkUpdateBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Bulk Update
+                    </button>
+                    <button class="btn btn-outline" id="exportBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="7,10 12,15 17,10" stroke="currentColor" stroke-width="2"/>
+                            <line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Export Data
+                    </button>
+                    <button class="btn btn-outline" id="generateReportBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Generate Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- Inventory Table -->
+            <div class="inventory-table-container">
+                <div class="table-header">
+                    <h3>Asset Inventory</h3>
+                    <div class="table-controls">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search assets..." id="inventorySearch">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                                <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <select class="filter-select" id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="computers">Computers</option>
+                            <option value="smart-devices">Smart Devices</option>
+                            <option value="network">Network Equipment</option>
+                            <option value="accessories">Accessories</option>
+                        </select>
+                        <select class="filter-select" id="statusFilter">
+                            <option value="">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="retired">Retired</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="table-wrapper">
+                    <table class="inventory-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" id="selectAll">
+                                </th>
+                                <th>Asset ID</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                                <th>Assigned To</th>
+                                <th>Purchase Date</th>
+                                <th>Value</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="row-select"></td>
+                                <td><span class="asset-id">ST-001847</span></td>
+                                <td>
+                                    <div class="asset-info">
+                                        <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop" alt="Dell OptiPlex">
+                                        <div>
+                                            <div class="asset-name">Dell OptiPlex 7090</div>
+                                            <div class="asset-model">Intel i7, 16GB RAM</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-tag computers">Computers</span></td>
+                                <td>Engineering - Floor 3</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>John Smith</td>
+                                <td>2023-08-15</td>
+                                <td>$1,299</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="action-btn" title="View Details">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                        <button class="action-btn" title="Edit">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                        <button class="action-btn" title="Transfer">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="7" y1="17" x2="17" y2="7" stroke="currentColor" stroke-width="2"/>
+                                                <polyline points="7,7 17,7 17,17" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="row-select"></td>
+                                <td><span class="asset-id">ST-002156</span></td>
+                                <td>
+                                    <div class="asset-info">
+                                        <img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop" alt="IoT Sensor">
+                                        <div>
+                                            <div class="asset-name">IoT Temperature Sensor</div>
+                                            <div class="asset-model">Wireless, 2-year battery</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-tag smart-devices">Smart Devices</span></td>
+                                <td>Manufacturing - Line A</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>System Automated</td>
+                                <td>2023-09-22</td>
+                                <td>$89</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="action-btn" title="View Details">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                        <button class="action-btn" title="Edit">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                        <button class="action-btn" title="Transfer">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="7" y1="17" x2="17" y2="7" stroke="currentColor" stroke-width="2"/>
+                                                <polyline points="7,7 17,7 17,17" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="row-select"></td>
+                                <td><span class="asset-id">ST-003421</span></td>
+                                <td>
+                                    <div class="asset-info">
+                                        <img src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop" alt="Network Switch">
+                                        <div>
+                                            <div class="asset-name">Cisco Catalyst 9300</div>
+                                            <div class="asset-model">48-port, PoE+</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-tag network">Network</span></td>
+                                <td>IT Datacenter - Rack 15</td>
+                                <td><span class="status-badge maintenance">Maintenance</span></td>
+                                <td>IT Infrastructure</td>
+                                <td>2023-07-10</td>
+                                <td>$1,899</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="action-btn" title="View Details">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                        <button class="action-btn" title="Edit">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                        <button class="action-btn" title="Transfer">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="7" y1="17" x2="17" y2="7" stroke="currentColor" stroke-width="2"/>
+                                                <polyline points="7,7 17,7 17,17" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="row-select"></td>
+                                <td><span class="asset-id">ST-004789</span></td>
+                                <td>
+                                    <div class="asset-info">
+                                        <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop" alt="Lenovo ThinkPad">
+                                        <div>
+                                            <div class="asset-name">Lenovo ThinkPad E15</div>
+                                            <div class="asset-model">AMD Ryzen 5, 8GB RAM</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-tag computers">Computers</span></td>
+                                <td>Sales - Floor 2</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>Sarah Johnson</td>
+                                <td>2023-10-05</td>
+                                <td>$899</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="action-btn" title="View Details">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                        <button class="action-btn" title="Edit">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                        <button class="action-btn" title="Transfer">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="7" y1="17" x2="17" y2="7" stroke="currentColor" stroke-width="2"/>
+                                                <polyline points="7,7 17,7 17,17" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="row-select"></td>
+                                <td><span class="asset-id">ST-005234</span></td>
+                                <td>
+                                    <div class="asset-info">
+                                        <img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop" alt="Smart Display">
+                                        <div>
+                                            <div class="asset-name">Smart Display Panel</div>
+                                            <div class="asset-model">32" Touch, 4K</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-tag smart-devices">Smart Devices</span></td>
+                                <td>Conference Room A</td>
+                                <td><span class="status-badge retired">Retired</span></td>
+                                <td>Facilities</td>
+                                <td>2022-12-18</td>
+                                <td>$299</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="action-btn" title="View Details">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                        <button class="action-btn" title="Edit">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                        <button class="action-btn" title="Transfer">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="7" y1="17" x2="17" y2="7" stroke="currentColor" stroke-width="2"/>
+                                                <polyline points="7,7 17,7 17,17" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="table-pagination">
+                    <div class="pagination-info">
+                        Showing 1-5 of 15,847 assets
+                    </div>
+                    <div class="pagination-controls">
+                        <button class="pagination-btn" disabled>Previous</button>
+                        <button class="pagination-number active">1</button>
+                        <button class="pagination-number">2</button>
+                        <button class="pagination-number">3</button>
+                        <span>...</span>
+                        <button class="pagination-number">3169</button>
+                        <button class="pagination-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Stellantis Materials Hub</span>
+                    </div>
+                    <p>Empowering Stellantis teams with intelligent material procurement and management solutions for the modern workplace.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="catalog.html">Product Catalog</a></li>
+                        <li><a href="inventory.html">Inventory Management</a></li>
+                        <li><a href="procurement.html">Procurement Portal</a></li>
+                        <li><a href="analytics.html">Analytics Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="catalog.html?category=computers">Computers & Laptops</a></li>
+                        <li><a href="catalog.html?category=smart-devices">Smart Devices</a></li>
+                        <li><a href="catalog.html?category=network">Network Equipment</a></li>
+                        <li><a href="catalog.html?category=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="support.html#contact">Contact Support</a></li>
+                        <li><a href="support.html#training">Training Resources</a></li>
+                        <li><a href="support.html#documentation">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Stellantis N.V. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Security</a>
+                        <a href="#">Compliance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-header">
+                <input type="text" placeholder="Search products, categories, or part numbers..." class="search-input" id="searchInput">
+                <button class="search-close" id="searchClose">×</button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-suggestions">
+                    <h4>Popular Searches</h4>
+                    <div class="suggestion-tags">
+                        <span class="suggestion-tag">Dell Laptops</span>
+                        <span class="suggestion-tag">IoT Sensors</span>
+                        <span class="suggestion-tag">Network Switches</span>
+                        <span class="suggestion-tag">Workstations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">×</button>
+        </div>
+        <div class="cart-content">
+            <div class="cart-empty">
+                <div class="empty-icon">🛒</div>
+                <p>Your cart is empty</p>
+                <a href="catalog.html" class="btn btn-primary">Browse Catalog</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

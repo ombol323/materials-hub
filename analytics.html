@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard - Stellantis Materials Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span>📧 materials@stellantis.com</span>
+                    <span>📞 +1 (555) 123-4567</span>
+                </div>
+                <div class="user-actions">
+                    <a href="login.html" class="login-link">Employee Login</a>
+                    <span class="divider">|</span>
+                    <a href="support.html" class="support-link">Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Stellantis Materials Hub</span>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+                    <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+                    <li><a href="procurement.html" class="nav-link">Procurement</a></li>
+                    <li><a href="analytics.html" class="nav-link active">Analytics</a></li>
+                    <li><a href="support.html" class="nav-link">Support</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="19" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+                
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Analytics Dashboard</h1>
+                <p>Comprehensive insights and reporting for procurement and inventory management</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Analytics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Dashboard -->
+    <section class="analytics-dashboard">
+        <div class="container">
+            <!-- Dashboard Controls -->
+            <div class="dashboard-controls">
+                <div class="time-range-selector">
+                    <label>Time Range:</label>
+                    <select id="timeRange">
+                        <option value="7d">Last 7 days</option>
+                        <option value="30d" selected>Last 30 days</option>
+                        <option value="90d">Last 90 days</option>
+                        <option value="1y">Last year</option>
+                    </select>
+                </div>
+                <div class="dashboard-actions">
+                    <button class="btn btn-outline" id="exportReport">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="7,10 12,15 17,10" stroke="currentColor" stroke-width="2"/>
+                            <line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Export Report
+                    </button>
+                    <button class="btn btn-primary" id="scheduleReport">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Schedule Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h4>Total Spend</h4>
+                    </div>
+                    <div class="metric-value">$2.8M</div>
+                    <div class="metric-change positive">+12.5% vs last period</div>
+                    <div class="metric-chart">
+                        <div class="mini-chart">
+                            <div class="chart-bar" style="height: 20%"></div>
+                            <div class="chart-bar" style="height: 35%"></div>
+                            <div class="chart-bar" style="height: 45%"></div>
+                            <div class="chart-bar" style="height: 60%"></div>
+                            <div class="chart-bar" style="height: 80%"></div>
+                            <div class="chart-bar" style="height: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h4>Orders Processed</h4>
+                    </div>
+                    <div class="metric-value">1,247</div>
+                    <div class="metric-change positive">+8.3% vs last period</div>
+                    <div class="metric-chart">
+                        <div class="mini-chart">
+                            <div class="chart-bar" style="height: 40%"></div>
+                            <div class="chart-bar" style="height: 55%"></div>
+                            <div class="chart-bar" style="height: 30%"></div>
+                            <div class="chart-bar" style="height: 70%"></div>
+                            <div class="chart-bar" style="height: 85%"></div>
+                            <div class="chart-bar" style="height: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h4>Avg. Processing Time</h4>
+                    </div>
+                    <div class="metric-value">3.2 days</div>
+                    <div class="metric-change negative">+0.5 days vs last period</div>
+                    <div class="metric-chart">
+                        <div class="mini-chart">
+                            <div class="chart-bar" style="height: 60%"></div>
+                            <div class="chart-bar" style="height: 45%"></div>
+                            <div class="chart-bar" style="height: 70%"></div>
+                            <div class="chart-bar" style="height: 55%"></div>
+                            <div class="chart-bar" style="height: 80%"></div>
+                            <div class="chart-bar" style="height: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h4>Approval Rate</h4>
+                    </div>
+                    <div class="metric-value">89.2%</div>
+                    <div class="metric-change positive">+2.1% vs last period</div>
+                    <div class="metric-chart">
+                        <div class="mini-chart">
+                            <div class="chart-bar" style="height: 85%"></div>
+                            <div class="chart-bar" style="height: 90%"></div>
+                            <div class="chart-bar" style="height: 88%"></div>
+                            <div class="chart-bar" style="height: 92%"></div>
+                            <div class="chart-bar" style="height: 87%"></div>
+                            <div class="chart-bar" style="height: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <!-- Spending Trends -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Spending Trends</h3>
+                        <div class="chart-controls">
+                            <select class="chart-filter">
+                                <option value="monthly">Monthly</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="daily">Daily</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-placeholder">
+                            <div class="chart-area">
+                                <div class="chart-line">
+                                    <div class="line-chart">
+                                        <div class="chart-point" style="left: 10%; bottom: 20%"></div>
+                                        <div class="chart-point" style="left: 25%; bottom: 35%"></div>
+                                        <div class="chart-point" style="left: 40%; bottom: 45%"></div>
+                                        <div class="chart-point" style="left: 55%; bottom: 60%"></div>
+                                        <div class="chart-point" style="left: 70%; bottom: 55%"></div>
+                                        <div class="chart-point" style="left: 85%; bottom: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-labels">
+                                    <span>Jan</span>
+                                    <span>Feb</span>
+                                    <span>Mar</span>
+                                    <span>Apr</span>
+                                    <span>May</span>
+                                    <span>Jun</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category Breakdown -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Spending by Category</h3>
+                    </div>
+                    <div class="chart-container">
+                        <div class="donut-chart">
+                            <div class="donut-center">
+                                <div class="donut-value">$2.8M</div>
+                                <div class="donut-label">Total</div>
+                            </div>
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #3b82f6;"></div>
+                                <span>Computers (45%)</span>
+                                <span class="legend-value">$1.26M</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #10b981;"></div>
+                                <span>Smart Devices (25%)</span>
+                                <span class="legend-value">$700K</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #f59e0b;"></div>
+                                <span>Network Equipment (20%)</span>
+                                <span class="legend-value">$560K</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #ef4444;"></div>
+                                <span>Accessories (10%)</span>
+                                <span class="legend-value">$280K</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Department Analysis -->
+            <div class="department-analysis">
+                <div class="analysis-header">
+                    <h3>Department Analysis</h3>
+                    <div class="analysis-controls">
+                        <select class="analysis-filter">
+                            <option value="spending">By Spending</option>
+                            <option value="orders">By Orders</option>
+                            <option value="efficiency">By Efficiency</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="department-grid">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <h4>Engineering</h4>
+                            <span class="department-trend positive">+15.2%</span>
+                        </div>
+                        <div class="department-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Total Spend</span>
+                                <span class="metric-value">$1.2M</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Orders</span>
+                                <span class="metric-value">487</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Avg. Order Value</span>
+                                <span class="metric-value">$2,463</span>
+                            </div>
+                        </div>
+                        <div class="department-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                            <span class="progress-label">85% of budget used</span>
+                        </div>
+                    </div>
+                    
+                    <div class="department-card">
+                        <div class="department-header">
+                            <h4>Manufacturing</h4>
+                            <span class="department-trend positive">+8.7%</span>
+                        </div>
+                        <div class="department-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Total Spend</span>
+                                <span class="metric-value">$890K</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Orders</span>
+                                <span class="metric-value">342</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Avg. Order Value</span>
+                                <span class="metric-value">$2,602</span>
+                            </div>
+                        </div>
+                        <div class="department-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 72%"></div>
+                            </div>
+                            <span class="progress-label">72% of budget used</span>
+                        </div>
+                    </div>
+                    
+                    <div class="department-card">
+                        <div class="department-header">
+                            <h4>IT</h4>
+                            <span class="department-trend positive">+22.1%</span>
+                        </div>
+                        <div class="department-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Total Spend</span>
+                                <span class="metric-value">$450K</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Orders</span>
+                                <span class="metric-value">156</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Avg. Order Value</span>
+                                <span class="metric-value">$2,885</span>
+                            </div>
+                        </div>
+                        <div class="department-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                            <span class="progress-label">60% of budget used</span>
+                        </div>
+                    </div>
+                    
+                    <div class="department-card">
+                        <div class="department-header">
+                            <h4>Sales</h4>
+                            <span class="department-trend negative">-3.2%</span>
+                        </div>
+                        <div class="department-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Total Spend</span>
+                                <span class="metric-value">$260K</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Orders</span>
+                                <span class="metric-value">262</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Avg. Order Value</span>
+                                <span class="metric-value">$992</span>
+                            </div>
+                        </div>
+                        <div class="department-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 43%"></div>
+                            </div>
+                            <span class="progress-label">43% of budget used</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Products -->
+            <div class="top-products">
+                <div class="products-header">
+                    <h3>Top Performing Products</h3>
+                    <div class="products-controls">
+                        <select class="products-filter">
+                            <option value="quantity">By Quantity</option>
+                            <option value="revenue">By Revenue</option>
+                            <option value="growth">By Growth</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="products-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Orders</th>
+                                <th>Revenue</th>
+                                <th>Growth</th>
+                                <th>Trend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop" alt="Dell OptiPlex">
+                                        <span>Dell OptiPlex 7090</span>
+                                    </div>
+                                </td>
+                                <td><span class="category-tag computers">Computers</span></td>
+                                <td>127</td>
+                                <td>$164,973</td>
+                                <td><span class="growth positive">+18.5%</span></td>
+                                <td>
+                                    <div class="trend-chart">
+                                        <div class="trend-bar" style="height: 60%"></div>
+                                        <div class="trend-bar" style="height: 75%"></div>
+                                        <div class="trend-bar" style="height: 85%"></div>
+                                        <div class="trend-bar" style="height: 100%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop" alt="IoT Sensor">
+                                        <span>IoT Temperature Sensor</span>
+                                    </div>
+                                </td>
+                                <td><span class="category-tag smart-devices">Smart Devices</span></td>
+                                <td>89</td>
+                                <td>$7,921</td>
+                                <td><span class="growth positive">+24.3%</span></td>
+                                <td>
+                                    <div class="trend-chart">
+                                        <div class="trend-bar" style="height: 40%"></div>
+                                        <div class="trend-bar" style="height: 65%"></div>
+                                        <div class="trend-bar" style="height: 80%"></div>
+                                        <div class="trend-bar" style="height: 100%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <img src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop" alt="Cisco Switch">
+                                        <span>Cisco Catalyst 9300</span>
+                                    </div>
+                                </td>
+                                <td><span class="category-tag network">Network</span></td>
+                                <td>34</td>
+                                <td>$64,566</td>
+                                <td><span class="growth positive">+12.7%</span></td>
+                                <td>
+                                    <div class="trend-chart">
+                                        <div class="trend-bar" style="height: 70%"></div>
+                                        <div class="trend-bar" style="height: 65%"></div>
+                                        <div class="trend-bar" style="height: 85%"></div>
+                                        <div class="trend-bar" style="height: 100%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop" alt="Lenovo ThinkPad">
+                                        <span>Lenovo ThinkPad E15</span>
+                                    </div>
+                                </td>
+                                <td><span class="category-tag computers">Computers</span></td>
+                                <td>76</td>
+                                <td>$68,324</td>
+                                <td><span class="growth negative">-5.2%</span></td>
+                                <td>
+                                    <div class="trend-chart">
+                                        <div class="trend-bar" style="height: 100%"></div>
+                                        <div class="trend-bar" style="height: 85%"></div>
+                                        <div class="trend-bar" style="height: 70%"></div>
+                                        <div class="trend-bar" style="height: 60%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Stellantis Materials Hub</span>
+                    </div>
+                    <p>Empowering Stellantis teams with intelligent material procurement and management solutions for the modern workplace.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="catalog.html">Product Catalog</a></li>
+                        <li><a href="inventory.html">Inventory Management</a></li>
+                        <li><a href="procurement.html">Procurement Portal</a></li>
+                        <li><a href="analytics.html">Analytics Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="catalog.html?category=computers">Computers & Laptops</a></li>
+                        <li><a href="catalog.html?category=smart-devices">Smart Devices</a></li>
+                        <li><a href="catalog.html?category=network">Network Equipment</a></li>
+                        <li><a href="catalog.html?category=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="support.html#contact">Contact Support</a></li>
+                        <li><a href="support.html#training">Training Resources</a></li>
+                        <li><a href="support.html#documentation">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Stellantis N.V. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Security</a>
+                        <a href="#">Compliance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-header">
+                <input type="text" placeholder="Search products, categories, or part numbers..." class="search-input" id="searchInput">
+                <button class="search-close" id="searchClose">×</button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-suggestions">
+                    <h4>Popular Searches</h4>
+                    <div class="suggestion-tags">
+                        <span class="suggestion-tag">Dell Laptops</span>
+                        <span class="suggestion-tag">IoT Sensors</span>
+                        <span class="suggestion-tag">Network Switches</span>
+                        <span class="suggestion-tag">Workstations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">×</button>
+        </div>
+        <div class="cart-content">
+            <div class="cart-empty">
+                <div class="empty-icon">🛒</div>
+                <p>Your cart is empty</p>
+                <a href="catalog.html" class="btn btn-primary">Browse Catalog</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

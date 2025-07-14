@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellantis Materials Hub - Intelligent Equipment & Technology Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span>📧 materials@stellantis.com</span>
+                     <span>📞 +(33) 690476399</span>
+                </div>
+                <div class="user-actions">
+                    <a href="login.html" class="login-link">Employee Login</a>
+                    <span class="divider">|</span>
+                    <a href="support.html" class="support-link">Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Stellantis Materials Hub</span>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+                    <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+                    <li><a href="procurement.html" class="nav-link">Procurement</a></li>
+                    <li><a href="analytics.html" class="nav-link">Analytics</a></li>
+                    <li><a href="support.html" class="nav-link">Support</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="19" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+                
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Stellantis Materials Hub</div>
+            <h1 class="hero-title">Intelligent Equipment & Technology Solutions</h1>
+            <p class="hero-subtitle">Streamline your material procurement with our comprehensive platform for PCs, intelligent devices, and cutting-edge technology</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Products Available</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Available</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime Guarantee</div>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="catalog.html" class="btn btn-primary">Browse Catalog</a>
+                <a href="procurement.html" class="btn btn-secondary">Start Procurement</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+        <div class="container">
+            <div class="quick-actions-grid">
+                <div class="quick-action-card">
+                    <div class="action-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
+                            <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Order PCs & Laptops</h3>
+                    <p>Browse our exentive  catalog of computers and mobile devices</p>
+                    <a href="catalog.html?category=computers" class="action-link">Shop Now →</a>
+                </div>
+                
+                <div class="quick-action-card">
+                    <div class="action-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Devices</h3>
+                    <p>IoT sensors, smart displays, and intelligent automation tools</p>
+                    <a href="catalog.html?category=smart-devices" class="action-link">Explore →</a>
+                </div>
+                
+                <div class="quick-action-card">
+                    <div class="action-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="3.27,6.96 12,12.01 20.73,6.96" stroke="currentColor" stroke-width="2"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Track Inventory</h3>
+                    <p>Real-time inventory management and asset tracking</p>
+                    <a href="inventory.html" class="action-link">View Inventory →</a>
+                </div>
+                
+                <div class="quick-action-card">
+                    <div class="action-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Procurement Portal</h3>
+                    <p>Submit requests, track approvals, and manage budgets</p>
+                    <a href="procurement.html" class="action-link">START REQUEST →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>FEATERED CATEGORIES</h2>
+                <p>Discover our most popular equipment categories for modern workplace solutions</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="Computers & Laptops">
+                        <div class="category-overlay">
+                            <span class="item-count">2,500+ Items</span>
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <h3>Computers & Laptops</h3>
+                        <p>High performance, laptops, and mobile computing solutions</p>
+                        <ul class="category-features">
+                            <li>Business Laptops</li>
+                            <li>Workstations</li>
+                            <li>All-in-One PCs</li>
+                            <li>Gaming Systems</li>
+                        </ul>
+                        <a href="catalog.html?category=computers" class="btn btn-outline">Browse Category</a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="Smart Devices">
+                        <div class="category-overlay">
+                            <span class="item-count">1,800+ Items</span>
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <h3>Smart Devices & IoT</h3>
+                        <p>Intelligent sensors, automation tools, and connected devices</p>
+                        <ul class="category-features">
+                            <li>IoT Sensors</li>
+                            <li>Smart Displays</li>
+                            <li>Automation Controllers</li>
+                            <li>Monitoring Systems</li>
+                        </ul>
+                        <a href="catalog.html?category=smart-devices" class="btn btn-outline">Browse Category</a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="Network Equipment">
+                        <div class="category-overlay">
+                            <span class="item-count">950+ Items</span>
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <h3>Network & Infrastructure</h3>
+                        <p>Networking equipment, servers, and infrastructure solutions</p>
+                        <ul class="category-features">
+                            <li>Network Switches</li>
+                            <li>Servers</li>
+                            <li>Storage Solutions</li>
+                            <li>Security Appliances</li>
+                        </ul>
+                        <a href="catalog.html=network"?category class="btn btn-outline">Browse Category</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Features -->
+    <section class="platform-features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Our Platform</h2>
+                <p>Streamlined procurement process with enterprise-grade features</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Approved Vendors</h3>
+                    <p>All equipment sourced from pre-approved, certified vendors ensuring quality and compliance</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22S2 16 2 10a10 10 0 1 1 20 0c0 6-10 12-10 12z" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Real-time Tracking</h3>
+                    <p>Track your orders from procurement to delivery with real-time status updates</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" stroke="currentColor" stroke-width="2"/>
+                            <rect x="4" y="3" width="16" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Budget Management</h3>
+                    <p>Integrated budget tracking and approval workflows for efficient cost control</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Inventory Integration</h3>
+                    <p>Seamless integration with existing inventory systems and asset management tools</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 11H15M9 15H15M17 21L12 16L7 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Compliance Ready</h3>
+                    <p>Built-in compliance checks and documentation for regulatory requirements</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Comprehensive reporting and analytics for procurement insight and optimization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Orders -->
+    <section class="recent-activity">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recent Platform Activity</h2>
+                <p>Stay updated with the latest procurement activities and system updates</p>
+            </div>
+            
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <h3>Latest Orders</h3>
+                        <a href="procurement.html" class="view-all">View All →</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon status-approved">✓</div>
+                            <div class="activity-content">
+                                <div class="activity-title">Dell OptiPlex 7090 (x25)</div>
+                                <div class="activity-meta">Engineering Dept • Approved • $32,500</div>
+                            </div>
+                            <div class="activity-time">2h ago</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon status-pending">⏳</div>
+                            <div class="activity-content">
+                                <div class="activity-title">IoT Sensor Package (x100)</div>
+                                <div class="activity-meta">Manufacturing • Pending • $15,750</div>
+                            </div>
+                            <div class="activity-time">4h ago</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon status-delivered">📦</div>
+                            <div class="activity-content">
+                                <div class="activity-title">Network Switch Upgrade</div>
+                                <div class="activity-meta">IT Infrastructure • Delivered • $8,900</div>
+                            </div>
+                            <div class="activity-time">1d ago</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <h3>System Updates</h3>
+                        <a href="support.html" class="view-all">View All →</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon status-info">ℹ️</div>
+                            <div class="activity-content">
+                                <div class="activity-title">New Vendor Added: Lenovo</div>
+                                <div class="activity-meta">Expanded laptop and workstation options</div>
+                            </div>
+                            <div class="activity-time">3h ago</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon status-update">🔄</div>
+                            <div class="activity-content">
+                                <div class="activity-title">Platform Maintenance</div>
+                                <div class="activity-meta">Scheduled for Sunday 2:00 AM - 4:00 AM</div>
+                            </div>
+                            <div class="activity-time">6h ago</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon status-success">🎉</div>
+                            <div class="activity-content">
+                                <div class="activity-title">Q4 Budget Approved</div>
+                                <div class="activity-meta">$2.5M allocated for technology upgrades</div>
+                            </div>
+                            <div class="activity-time">2d ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Streamline Your Procurement?</h2>
+                <p>Join thousands of Stellantis employees already using our platform for efficient material management</p>
+                <div class="cta-buttons">
+                    <a href="catalog.html" class="btn btn-primary">Start Shopping</a>
+                    <a href="support.html" class="btn btn-secondary">Get support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Stellantis Materials HUB</span>
+                    </div>
+                    <p>Empowering Stellantis teams with intelligent material procurement and management solutions for the modern workplace.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="catalog.html">Product Catalog</a></li>
+                        <li><a href="inventory.html">Inventory Management</a></li>
+                        <li><a href="procurement.html">Procurement Portal</a></li>
+                        <li><a href="analytics.html">Analytics Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="catalog.html?category=computers">Computers & Laptops</a></li>
+                        <li><a href="catalog.html?category=smart-devices">Smart Devices</a></li>
+                        <li><a href="catalog.html?category=network">Network Equipment</a></li>
+                        <li><a href="catalog.html?category=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="support.html#contact">Contact Support</a></li>
+                        <li><a href="support.html#training">Training Resources</a></li>
+                        <li><a href="support.html#documentation">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Stellantis N.V. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Security</a>
+                        <a href="#">Compliance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-header">
+                <input type="text" placeholder="Search products, categories, or part numbers..." class="search-input" id="searchInput">
+                <button class="search-close" id="searchClose">×</button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-suggestions">
+                    <h4>Popular Searches</h4>
+                    <div class="suggestion-tags">
+                        <span class="suggestion-tag">Dell Laptops</span>
+                        <span class="suggestion-tag">IoT Sensors</span>
+                        <span class="suggestion-tag">Network Switches</span>
+                        <span class="suggestion-tag">Workstations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">×</button>
+        </div>
+        <div class="cart-content">
+            <div class="cart-empty">
+                <div class="empty-icon">🛒</div>
+                <p>Your cart is empty</p>
+                <a href="catalog.html" class="btn btn-primary">Browse Catalog</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Stellantis Materials Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span>📧 materials@stellantis.com</span>
+                     <span>📞 +(33) 690476399</span>
+                </div>
+                <div class="user-actions">
+                    <a href="login.html" class="login-link">Employee Login</a>
+                    <span class="divider">|</span>
+                    <a href="support.html" class="support-link">Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Stellantis Materials Hub</span>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+                    <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+                    <li><a href="procurement.html" class="nav-link">Procurement</a></li>
+                    <li><a href="analytics.html" class="nav-link">Analytics</a></li>
+                    <li><a href="support.html" class="nav-link">Support</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="19" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="cart-count">3</span>
+                    </button>
+                </div>
+                
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Progress -->
+    <section class="checkout-progress">
+        <div class="container">
+            <div class="progress-steps">
+                <div class="step completed">
+                    <div class="step-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span>Cart Review</span>
+                </div>
+                <div class="step-line completed"></div>
+                <div class="step active">
+                    <div class="step-icon">2</div>
+                    <span>Checkout</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <span>Payment</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-icon">4</div>
+                    <span>Confirmation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-layout">
+                <!-- Checkout Form -->
+                <div class="checkout-form-container">
+                    <h2>Checkout Information</h2>
+                    
+                    <form class="checkout-form" id="checkoutForm">
+                        <!-- Contact Information -->
+                        <div class="form-section">
+                            <h3>Contact Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <!-- Department Information -->
+                        <div class="form-section">
+                            <h3>Department & Delivery Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="department">Department *</label>
+                                    <select id="department" name="department" required>
+                                        <option value="">Select Department</option>
+                                        <option value="engineering">Engineering</option>
+                                        <option value="manufacturing">Manufacturing</option>
+                                        <option value="it">IT</option>
+                                        <option value="sales">Sales</option>
+                                        <option value="hr">Human Resources</option>
+                                        <option value="finance">Finance</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="costCenter">Cost Center *</label>
+                                    <input type="text" id="costCenter" name="costCenter" required placeholder="e.g., CC-ENG-001">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="deliveryAddress">Delivery Address *</label>
+                                <textarea id="deliveryAddress" name="deliveryAddress" rows="3" required placeholder="Building, Floor, Room/Office Number"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="deliveryDate">Preferred Delivery Date</label>
+                                    <input type="date" id="deliveryDate" name="deliveryDate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="urgency">Urgency Level</label>
+                                    <select id="urgency" name="urgency">
+                                        <option value="standard">Standard (5-7 days)</option>
+                                        <option value="expedited">Expedited (2-3 days)</option>
+                                        <option value="urgent">Urgent (Next day)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Special Instructions -->
+                        <div class="form-section">
+                            <h3>Special Instructions</h3>
+                            <div class="form-group">
+                                <label for="instructions">Delivery Instructions</label>
+                                <textarea id="instructions" name="instructions" rows="3" placeholder="Any special delivery instructions or requirements..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="justification">Business Justification *</label>
+                                <textarea id="justification" name="justification" rows="3" required placeholder="Please provide business justification for this purchase..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Approval Information -->
+                        <div class="form-section">
+                            <h3>Approval Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="approver">Manager/Approver *</label>
+                                    <select id="approver" name="approver" required>
+                                        <option value="">Select Approver</option>
+                                        <option value="john.manager">John Manager - Engineering</option>
+                                        <option value="sarah.director">Sarah Director - IT</option>
+                                        <option value="mike.supervisor">Mike Supervisor - Manufacturing</option>
+                                        <option value="lisa.lead">Lisa Lead - Sales</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="budgetCode">Budget Code</label>
+                                    <input type="text" id="budgetCode" name="budgetCode" placeholder="e.g., CAPEX-2024-Q4">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="form-section">
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <span class="checkmark"></span>
+                                    I agree to the <a href="#" class="link">Terms and Conditions</a> and <a href="#" class="link">Procurement Policy</a>
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="notifications" name="notifications">
+                                    <span class="checkmark"></span>
+                                    Send me email notifications about order status updates
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <a href="catalog.html" class="btn btn-outline">Back to Cart</a>
+                            <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    
+                    <div class="summary-items">
+                        <div class="summary-item">
+                            <div class="item-image">
+                                <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop" alt="Dell OptiPlex 7090">
+                            </div>
+                            <div class="item-details">
+                                <h4>Dell OptiPlex 7090 Desktop</h4>
+                                <p>Intel Core i7, 16GB RAM, 512GB SSD</p>
+                                <div class="item-meta">
+                                    <span class="quantity">Qty: 2</span>
+                                    <span class="price">$1,299.00 each</span>
+                                </div>
+                            </div>
+                            <div class="item-total">$2,598.00</div>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="item-image">
+                                <img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop" alt="IoT Sensor">
+                            </div>
+                            <div class="item-details">
+                                <h4>IoT Temperature Sensor</h4>
+                                <p>Wireless, 2-year battery life</p>
+                                <div class="item-meta">
+                                    <span class="quantity">Qty: 5</span>
+                                    <span class="price">$89.00 each</span>
+                                </div>
+                            </div>
+                            <div class="item-total">$445.00</div>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="item-image">
+                                <img src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop" alt="Network Switch">
+                            </div>
+                            <div class="item-details">
+                                <h4>Cisco Catalyst 9300 Switch</h4>
+                                <p>48-port Gigabit with PoE+</p>
+                                <div class="item-meta">
+                                    <span class="quantity">Qty: 1</span>
+                                    <span class="price">$1,899.00 each</span>
+                                </div>
+                            </div>
+                            <div class="item-total">$1,899.00</div>
+                        </div>
+                    </div>
+
+                    <div class="summary-totals">
+                        <div class="total-line">
+                            <span>Subtotal</span>
+                            <span>$4,942.00</span>
+                        </div>
+                        <div class="total-line">
+                            <span>Shipping</span>
+                            <span>Free</span>
+                        </div>
+                        <div class="total-line">
+                            <span>Tax</span>
+                            <span>$395.36</span>
+                        </div>
+                        <div class="total-line total">
+                            <span>Total</span>
+                            <span>$5,337.36</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-info">
+                        <div class="info-item">
+                            <div class="info-icon">🚚</div>
+                            <div class="info-text">
+                                <strong>Free Shipping</strong>
+                                <p>Standard delivery 5-7 business days</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">🔒</div>
+                            <div class="info-text">
+                                <strong>Secure Checkout</strong>
+                                <p>Your information is protected</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📞</div>
+                            <div class="info-text">
+                                <strong>Support Available</strong>
+                                <p>24/7 customer support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Stellantis Materials Hub</span>
+                    </div>
+                    <p>Empowering Stellantis teams with intelligent material procurement and management solutions for the modern workplace.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="catalog.html">Product Catalog</a></li>
+                        <li><a href="inventory.html">Inventory Management</a></li>
+                        <li><a href="procurement.html">Procurement Portal</a></li>
+                        <li><a href="analytics.html">Analytics Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="catalog.html?category=computers">Computers & Laptops</a></li>
+                        <li><a href="catalog.html?category=smart-devices">Smart Devices</a></li>
+                        <li><a href="catalog.html?category=network">Network Equipment</a></li>
+                        <li><a href="catalog.html?category=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="support.html#contact">Contact Support</a></li>
+                        <li><a href="support.html#training">Training Resources</a></li>
+                        <li><a href="support.html#documentation">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Stellantis N.V. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Security</a>
+                        <a href="#">Compliance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

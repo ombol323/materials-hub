@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog - Stellantis Materials Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span>📧 materials@stellantis.com</span>
+                    <span>📞 +(33) 690476399</span>
+                </div>
+                <div class="user-actions">
+                    <a href="login.html" class="login-link">Employee Login</a>
+                    <span class="divider">|</span>
+                    <a href="support.html" class="support-link">Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Stellantis Materials Hub</span>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="catalog.html" class="nav-link active">Catalog</a></li>
+                    <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+                    <li><a href="procurement.html" class="nav-link">Procurement</a></li>
+                    <li><a href="analytics.html" class="nav-link">Analytics</a></li>
+                    <li><a href="support.html" class="nav-link">Support</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="19" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+                
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Product Catalog</h1>
+                <p>Browse our comprehensive selection of intelligent materials and technology solutions</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Catalog</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="catalog-section">
+        <div class="container">
+            <div class="catalog-layout">
+                <!-- Filters Sidebar -->
+                <div class="filters-sidebar">
+                    <div class="filters-header">
+                        <h3>Filters</h3>
+                        <button class="clear-filters" id="clearFilters">Clear All</button>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Categories</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="computers">
+                                <span class="checkmark"></span>
+                                Computers & Laptops
+                                <span class="count">(2,500)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="smart-devices">
+                                <span class="checkmark"></span>
+                                Smart Devices & IoT
+                                <span class="count">(1,800)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="network">
+                                <span class="checkmark"></span>
+                                Network Equipment
+                                <span class="count">(950)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="accessories">
+                                <span class="checkmark"></span>
+                                Accessories
+                                <span class="count">(3,200)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <div class="price-range">
+                            <input type="range" min="0" max="10000" value="5000" class="price-slider" id="priceRange">
+                            <div class="price-labels">
+                                <span>$0</span>
+                                <span id="priceValue">$5,000</span>
+                                <span>$10,000+</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Brands</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="dell">
+                                <span class="checkmark"></span>
+                                Dell
+                                <span class="count">(850)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="hp">
+                                <span class="checkmark"></span>
+                                HP
+                                <span class="count">(720)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="lenovo">
+                                <span class="checkmark"></span>
+                                Lenovo
+                                <span class="count">(650)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="cisco">
+                                <span class="checkmark"></span>
+                                Cisco
+                                <span class="count">(420)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="microsoft">
+                                <span class="checkmark"></span>
+                                Microsoft
+                                <span class="count">(380)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Availability</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="availability" value="in-stock">
+                                <span class="checkmark"></span>
+                                In Stock
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="availability" value="pre-order">
+                                <span class="checkmark"></span>
+                                Pre-Order
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Products Grid -->
+                <div class="products-container">
+                    <div class="catalog-header">
+                        <div class="results-info">
+                            <span id="resultsCount">Showing 1-24 of 8,450 products</span>
+                        </div>
+                        <div class="catalog-controls">
+                            <div class="sort-dropdown">
+                                <select id="sortSelect">
+                                    <option value="relevance">Sort by Relevance</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="name">Name A-Z</option>
+                                    <option value="newest">Newest First</option>
+                                </select>
+                            </div>
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/>
+                                        <rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/>
+                                        <rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/>
+                                        <rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </button>
+                                <button class="view-btn" data-view="list">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <line x1="8" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="8" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="8" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="3" y1="6" x2="3.01" y2="6" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="3" y1="12" x2="3.01" y2="12" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="3" y1="18" x2="3.01" y2="18" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Product Cards -->
+                        <div class="product-card" data-category="computers" data-brand="dell" data-price="1299">
+                            <div class="product-image">
+                                <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" alt="Dell OptiPlex 7090">
+                                <div class="product-badges">
+                                    <span class="badge badge-popular">Popular</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Quick View">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <div class="product-category">Computers</div>
+                                <h3 class="product-title">Dell OptiPlex 7090 Desktop</h3>
+                                <p class="product-description">Intel Core i7, 16GB RAM, 512GB SSD, Windows 11 Pro</p>
+                                <div class="product-specs">
+                                    <span class="spec">Intel i7</span>
+                                    <span class="spec">16GB RAM</span>
+                                    <span class="spec">512GB SSD</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">$1,299</span>
+                                        <span class="price-unit">per unit</span>
+                                    </div>
+                                    <button class="btn btn-primary add-to-cart" data-product-id="1">Add to Cart</button>
+                                </div>
+                                <div class="product-meta">
+                                    <span class="availability in-stock">✓ In Stock</span>
+                                    <span class="delivery">Ships in 2-3 days</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="smart-devices" data-brand="cisco" data-price="89">
+                            <div class="product-image">
+                                <img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" alt="IoT Temperature Sensor">
+                                <div class="product-badges">
+                                    <span class="badge badge-new">New</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Quick View">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <div class="product-category">Smart Devices</div>
+                                <h3 class="product-title">IoT Temperature Sensor</h3>
+                                <p class="product-description">Wireless temperature monitoring with real-time alerts</p>
+                                <div class="product-specs">
+                                    <span class="spec">Wireless</span>
+                                    <span class="spec">Battery Life: 2 years</span>
+                                    <span class="spec">IP67 Rated</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">$89</span>
+                                        <span class="price-unit">per unit</span>
+                                    </div>
+                                    <button class="btn btn-primary add-to-cart" data-product-id="2">Add to Cart</button>
+                                </div>
+                                <div class="product-meta">
+                                    <span class="availability in-stock">✓ In Stock</span>
+                                    <span class="delivery">Ships in 1-2 days</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="computers" data-brand="hp" data-price="2499">
+                            <div class="product-image">
+                                <img src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" alt="HP ZBook Studio G8">
+                                <div class="product-badges">
+                                    <span class="badge badge-enterprise">Enterprise</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Quick View">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <div class="product-category">Computers</div>
+                                <h3 class="product-title">HP ZBook Studio G8 Workstation</h3>
+                                <p class="product-description">Intel Core i9, 32GB RAM, 1TB SSD, NVIDIA RTX A3000</p>
+                                <div class="product-specs">
+                                    <span class="spec">Intel i9</span>
+                                    <span class="spec">32GB RAM</span>
+                                    <span class="spec">RTX A3000</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">$2,499</span>
+                                        <span class="price-unit">per unit</span>
+                                    </div>
+                                    <button class="btn btn-primary add-to-cart" data-product-id="3">Add to Cart</button>
+                                </div>
+                                <div class="product-meta">
+                                    <span class="availability pre-order">⏳ Pre-Order</span>
+                                    <span class="delivery">Ships in 7-10 days</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="network" data-brand="cisco" data-price="1899">
+                            <div class="product-image">
+                                <img src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" alt="Cisco Catalyst 9300">
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Quick View">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <div class="product-category">Network</div>
+                                <h3 class="product-title">Cisco Catalyst 9300 Switch</h3>
+                                <p class="product-description">48-port Gigabit Ethernet switch with PoE+</p>
+                                <div class="product-specs">
+                                    <span class="spec">48 Ports</span>
+                                    <span class="spec">PoE+</span>
+                                    <span class="spec">Layer 3</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">$1,899</span>
+                                        <span class="price-unit">per unit</span>
+                                    </div>
+                                    <button class="btn btn-primary add-to-cart" data-product-id="4">Add to Cart</button>
+                                </div>
+                                <div class="product-meta">
+                                    <span class="availability in-stock">✓ In Stock</span>
+                                    <span class="delivery">Ships in 3-5 days</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="computers" data-brand="lenovo" data-price="899">
+                            <div class="product-image">
+                                <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" alt="Lenovo ThinkPad E15">
+                                <div class="product-badges">
+                                    <span class="badge badge-bestseller">Best Seller</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Quick View">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <div class="product-category">Computers</div>
+                                <h3 class="product-title">Lenovo ThinkPad E15 Laptop</h3>
+                                <p class="product-description">AMD Ryzen 5, 8GB RAM, 256GB SSD, 15.6" Display</p>
+                                <div class="product-specs">
+                                    <span class="spec">AMD Ryzen 5</span>
+                                    <span class="spec">8GB RAM</span>
+                                    <span class="spec">15.6" Display</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">$899</span>
+                                        <span class="price-unit">per unit</span>
+                                    </div>
+                                    <button class="btn btn-primary add-to-cart" data-product-id="5">Add to Cart</button>
+                                </div>
+                                <div class="product-meta">
+                                    <span class="availability in-stock">✓ In Stock</span>
+                                    <span class="delivery">Ships in 1-2 days</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="smart-devices" data-brand="microsoft" data-price="299">
+                            <div class="product-image">
+                                <img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop" alt="Microsoft Surface Hub">
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Quick View">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <div class="product-category">Smart Devices</div>
+                                <h3 class="product-title">Smart Display Panel</h3>
+                                <p class="product-description">Interactive touch display for meeting rooms and collaboration</p>
+                                <div class="product-specs">
+                                    <span class="spec">32" Touch</span>
+                                    <span class="spec">4K Display</span>
+                                    <span class="spec">WiFi Enabled</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">$299</span>
+                                        <span class="price-unit">per unit</span>
+                                    </div>
+                                    <button class="btn btn-primary add-to-cart" data-product-id="6">Add to Cart</button>
+                                </div>
+                                <div class="product-meta">
+                                    <span class="availability in-stock">✓ In Stock</span>
+                                    <span class="delivery">Ships in 2-3 days</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="pagination-btn" disabled>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="15,18 9,12 15,6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Previous
+                        </button>
+                        <div class="pagination-numbers">
+                            <button class="pagination-number active">1</button>
+                            <button class="pagination-number">2</button>
+                            <button class="pagination-number">3</button>
+                            <span class="pagination-dots">...</span>
+                            <button class="pagination-number">352</button>
+                        </div>
+                        <button class="pagination-btn">
+                            Next
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Stellantis Materials Hub</span>
+                    </div>
+                    <p>Empowering Stellantis teams with intelligent material procurement and management solutions for the modern workplace.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="catalog.html">Product Catalog</a></li>
+                        <li><a href="inventory.html">Inventory Management</a></li>
+                        <li><a href="procurement.html">Procurement Portal</a></li>
+                        <li><a href="analytics.html">Analytics Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="catalog.html?category=computers">Computers & Laptops</a></li>
+                        <li><a href="catalog.html?category=smart-devices">Smart Devices</a></li>
+                        <li><a href="catalog.html?category=network">Network Equipment</a></li>
+                        <li><a href="catalog.html?category=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="support.html#contact">Contact Support</a></li>
+                        <li><a href="support.html#training">Training Resources</a></li>
+                        <li><a href="support.html#documentation">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Stellantis N.V. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Security</a>
+                        <a href="#">Compliance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-header">
+                <input type="text" placeholder="Search products, categories, or part numbers..." class="search-input" id="searchInput">
+                <button class="search-close" id="searchClose">×</button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-suggestions">
+                    <h4>Popular Searches</h4>
+                    <div class="suggestion-tags">
+                        <span class="suggestion-tag">Dell Laptops</span>
+                        <span class="suggestion-tag">IoT Sensors</span>
+                        <span class="suggestion-tag">Network Switches</span>
+                        <span class="suggestion-tag">Workstations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">×</button>
+        </div>
+        <div class="cart-content">
+            <div class="cart-empty">
+                <div class="empty-icon">🛒</div>
+                <p>Your cart is empty</p>
+                <a href="catalog.html" class="btn btn-primary">Browse Catalog</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
