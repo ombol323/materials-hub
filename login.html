@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login - Stellantis Materials Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span>📧 materials@stellantis.com</span>
+                    <span>📞 +(33) 690476399</span>
+                </div>
+                <div class="user-actions">
+                    <a href="login.html" class="login-link">Employee Login</a>
+                    <span class="divider">|</span>
+                    <a href="support.html" class="support-link">Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Stellantis Materials Hub</span>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+                    <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+                    <li><a href="procurement.html" class="nav-link">Procurement</a></li>
+                    <li><a href="analytics.html" class="nav-link">Analytics</a></li>
+                    <li><a href="support.html" class="nav-link">Support</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="19" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+                
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="container">
+            <div class="login-container">
+                <div class="login-header">
+                    <div class="login-logo">
+                        <div class="logo-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h1>Employee Login</h1>
+                    <p>Access your Stellantis Materials Hub account</p>
+                </div>
+
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="employeeId">Employee ID</label>
+                        <input type="text" id="employeeId" name="employeeId" required placeholder="Enter your employee ID">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-input">
+                            <input type="password" id="password" name="password" required placeholder="Enter your password">
+                            <button type="button" class="password-toggle" id="passwordToggle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="rememberMe">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                </form>
+
+                <div class="login-divider">
+                    <span>or</span>
+                </div>
+
+                <div class="sso-options">
+                    <button class="sso-btn microsoft">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1" y="1" width="10" height="10" fill="#f25022"/>
+                            <rect x="13" y="1" width="10" height="10" fill="#00a4ef"/>
+                            <rect x="1" y="13" width="10" height="10" fill="#ffb900"/>
+                            <rect x="13" y="13" width="10" height="10" fill="#7fba00"/>
+                        </svg>
+                        Sign in with Microsoft
+                    </button>
+                    
+                    <button class="sso-btn azure">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#0078d4" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="#0078d4" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="#0078d4" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                        Sign in with Azure AD
+                    </button>
+                </div>
+
+                <div class="login-help">
+                    <h4>Need Help?</h4>
+                    <ul>
+                        <li><a href="support.html">Contact IT Support</a></li>
+                        <li><a href="support.html">Account Recovery</a></li>
+                        <li><a href="support.html">System Requirements</a></li>
+                    </ul>
+                </div>
+
+                <div class="security-notice">
+                    <div class="security-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <p>Your login is secured with enterprise-grade encryption and multi-factor authentication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Stellantis Materials Hub</span>
+                    </div>
+                    <p>Empowering Stellantis teams with intelligent material procurement and management solutions for the modern workplace.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="catalog.html">Product Catalog</a></li>
+                        <li><a href="inventory.html">Inventory Management</a></li>
+                        <li><a href="procurement.html">Procurement Portal</a></li>
+                        <li><a href="analytics.html">Analytics Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="catalog.html?category=computers">Computers & Laptops</a></li>
+                        <li><a href="catalog.html?category=smart-devices">Smart Devices</a></li>
+                        <li><a href="catalog.html?category=network">Network Equipment</a></li>
+                        <li><a href="catalog.html?category=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="support.html#contact">Contact Support</a></li>
+                        <li><a href="support.html#training">Training Resources</a></li>
+                        <li><a href="support.html#documentation">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Stellantis N.V. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Security</a>
+                        <a href="#">Compliance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const passwordToggle = document.getElementById('passwordToggle');
+            const passwordInput = document.getElementById('password');
+            const ssoButtons = document.querySelectorAll('.sso-btn');
+
+            // Password toggle
+            passwordToggle.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // Update icon
+                const icon = type === 'password' ? 
+                    '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>' :
+                    '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" stroke="currentColor" stroke-width="2"/><line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2"/>';
+                
+                this.querySelector('svg').innerHTML = icon;
+            });
+
+            // Login form submission
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const employeeId = document.getElementById('employeeId').value;
+                const password = document.getElementById('password').value;
+                
+                // Show loading
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Signing in...';
+                submitBtn.disabled = true;
+                
+                // Simulate login process
+                setTimeout(() => {
+                    if (employeeId && password) {
+                        // Store login state
+                        localStorage.setItem('isLoggedIn', 'true');
+                        localStorage.setItem('employeeId', employeeId);
+                        localStorage.setItem('loginTime', new Date().toISOString());
+                        
+                        // Show success message
+                        showNotification('Login successful! Redirecting...', 'success');
+                        
+                        // Redirect to dashboard
+                        setTimeout(() => {
+                            window.location.href = 'index.html';
+                        }, 1500);
+                    } else {
+                        showNotification('Please enter valid credentials', 'error');
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }
+                }, 2000);
+            });
+
+            // SSO buttons
+            ssoButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const provider = this.classList.contains('microsoft') ? 'Microsoft' : 'Azure AD';
+                    showNotification(`Redirecting to ${provider} login...`, 'info');
+                    
+                    // Simulate SSO redirect
+                    setTimeout(() => {
+                        localStorage.setItem('isLoggedIn', 'true');
+                        localStorage.setItem('employeeId', 'SSO_USER');
+                        localStorage.setItem('loginTime', new Date().toISOString());
+                        window.location.href = 'index.html';
+                    }, 2000);
+                });
+            });
+
+            // Forgot password link
+            const forgotPasswordLink = document.querySelector('.forgot-password');
+            forgotPasswordLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                showNotification('Password reset instructions will be sent to your email', 'info');
+            });
+        });
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            
+            const icon = type === 'success' ? '✓' : type === 'error' ? '✗' : 'ℹ';
+            
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <span class="notification-icon">${icon}</span>
+                    <span class="notification-message">${message}</span>
+                </div>
+                <button class="notification-close">×</button>
+            `;
+            
+            Object.assign(notification.style, {
+                position: 'fixed',
+                top: '20px',
+                right: '20px',
+                background: type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6',
+                color: 'white',
+                padding: '16px 20px',
+                borderRadius: '8px',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+                zIndex: '3000',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '12px',
+                maxWidth: '400px',
+                minWidth: '300px',
+                animation: 'slideIn 0.3s ease-out'
+            });
+            
+            notification.querySelector('.notification-close').addEventListener('click', () => {
+                notification.remove();
+            });
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
